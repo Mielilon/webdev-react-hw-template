@@ -1,5 +1,6 @@
 import classNames from "classnames"
 import styles from "../PlayerTrack/PlayerTrack.module.css"
+import Link from "next/link"
 
 export default function PlayerTrack() {
   return (
@@ -11,28 +12,28 @@ export default function PlayerTrack() {
           </svg>
         </div>
         <div className={styles.trackPlayAuthor}>
-          <a className={styles.trackPlayAuthorLink} href="http://">
-            Ты та...
-          </a>
-        </div>
-        <div className={styles.trackPlayAlbum}>
-          <a className={styles.trackPlayAlbumLink} href="http://">
-            Баста
-          </a>
-        </div>
+          <Link className={styles.trackPlayAuthorLink} href="http://">
+          Ты та...
+        </Link>
       </div>
-      <div className={styles.trackPlayLikeDis}>
-        <div className={classNames(styles.trackPlayLike, styles.btnIcon)}>
-          <svg className={styles.trackPlayLikeSvg}>
-            <use xlinkHref="img/icon/sprite.svg#icon-like" />
-          </svg>
-        </div>
-        <div className={classNames(styles.trackPlayDislike, styles.btnIcon)}>
-          <svg className={styles.trackPlayDislikeSvg}>
-            <use xlinkHref="img/icon/sprite.svg#icon-dislike" />
-          </svg>
-        </div>
+      <div className={styles.trackPlayAlbum}>
+        <Link className={styles.trackPlayAlbumLink} href="http://">
+        Баста
+      </Link>
+    </div>
+      </div >
+    <div className={styles.trackPlayLikeDis}>
+      <div className={classNames(styles.trackPlayLike, styles.btnIcon)}>
+        <svg className={styles.trackPlayLikeSvg}>
+          <use xlinkHref="img/icon/sprite.svg#icon-like" />
+        </svg>
+      </div>
+      <div className={classNames(styles.trackPlayDislike, styles.btnIcon)}>
+        <svg className={styles.trackPlayDislikeSvg}>
+          <use xlinkHref="img/icon/sprite.svg#icon-dislike" />
+        </svg>
       </div>
     </div>
+    </div >
   )
 }

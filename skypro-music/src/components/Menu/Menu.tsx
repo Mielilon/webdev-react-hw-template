@@ -1,25 +1,28 @@
+'use client'
+import Link from "next/link"
 import styles from "../Menu/Menu.module.css"
 
 export default function Menu() {
+ 
   return (
     <div className={styles.navMenu}>
     <ul className={styles.menuList}>
       <li className={styles.menuItem}>
-        <a href="#" className={styles.menuLink}>
+        <Link href={"/"} className={styles.menuLink}>
           Главное
-        </a>
+        </Link>
       </li>
       <li className={styles.menuItem}>
-        <a href="#" className={styles.menuLink}>
+        <Link href={"/"} className={styles.menuLink}>
           Мой плейлист
-        </a>
+        </Link>
       </li>
       <li className={styles.menuItem}>
-        <a href="../signin.html" className={styles.menuLink}>
+        <Link href={'/signin'} className={styles.menuLink}>
           Войти
-        </a>
-      </li>
-    </ul>
-  </div>
+        </Link>
+      </li >
+    </ul >
+  </div >
   )
 }

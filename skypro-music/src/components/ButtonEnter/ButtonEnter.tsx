@@ -1,13 +1,14 @@
+import Link from "next/link";
 import styles from "./ButtonEnter.module.css"
 
 type ButtonEnter = {
   text: string;
 };
 
-export default function ButtonEnter({text} : ButtonEnter) {
+export default function ButtonEnter({ text }: ButtonEnter) {
   return (
     <button className={styles.modalBtnEnter}>
-      <a href="../index.html">{text}</a>
+      <Link href={"/"}>{text}</Link>
     </button>
   )
 }

@@ -1,16 +1,16 @@
-.modal__logo {
+.modalLogo {
   width: 140px;
   height: 21px;
   margin-bottom: 34px;
   background-color: transparent;
 }
 
-.modal__logo img {
+.modalLogo img {
   width: 140px;
   height: auto;
 }
 
-.modal__input {
+.modalInput {
   width: 100%;
   border-top: none;
   border-left: none;
@@ -21,7 +21,7 @@
   margin-bottom: 30px;
 }
 
-.modal__input::-webkit-input-placeholder {
+.modalInput::-webkit-input-placeholder {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -30,7 +30,7 @@
   color: #D0CECE;
 }
 
-.modal__input:-ms-input-placeholder {
+.modalInput:-ms-input-placeholder {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -39,7 +39,7 @@
   color: #D0CECE;
 }
 
-.modal__input::-ms-input-placeholder {
+.modalInput::-ms-input-placeholder {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -48,7 +48,7 @@
   color: #D0CECE;
 }
 
-.modal__input::placeholder {
+.modalInput::placeholder {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
