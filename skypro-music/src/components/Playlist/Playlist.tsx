@@ -3,7 +3,7 @@ import styles from "./Playlist.module.css";
 import Link from "next/link";
 
 type Playlist = {
-  src: any,
+  src: string,
   alt: string
 }
 
