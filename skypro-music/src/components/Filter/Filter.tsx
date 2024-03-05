@@ -11,16 +11,22 @@ type FilterType = {
 export default function Filter({ list, title, isOpen, onClick }: FilterType) {
   return (
     <>
+    <div className={styles.wrapper}>
       <button className={classNames(styles.filterButton, styles.btnText)} onClick={onClick}>
         {title}
       </button>
       {isOpen && (
-        <ul>Содержание
-          {list.map(item => (
-            <li key={item.id}>{item.name}</li>
-          ))}
+        <ul className={styles.dropdown}>
+          <div className={styles.wrap}>
+            {list.map((item) => (
+              <li className={styles.list} key={item.id}>
+                {item.name}
+              </li>
+            ))}
+          </div>
         </ul>
       )}
+      </div>
     </>
   )
 }

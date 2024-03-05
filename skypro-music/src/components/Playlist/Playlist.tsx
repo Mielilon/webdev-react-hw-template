@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import styles from "./Playlist.module.css";
 import Link from "next/link";
 
 type Playlist = {
-  src: string,
+  src: StaticImageData,
   alt: string
 }
 

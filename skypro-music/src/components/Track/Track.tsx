@@ -41,7 +41,7 @@ export default function Track({ title, author, album, time }: Track) {
         </svg>
         <span className={styles.trackTimeText}>{time}</span>
       </div>
-        </div >
+        </div>
       </div >
     </>
   )

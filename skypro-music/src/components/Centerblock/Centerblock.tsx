@@ -5,6 +5,7 @@ import PlaylistTitle from "../PlaylistTitle/PlaylistTitle";
 import SearchBar from "../SearchBar/SearchBar";
 import Track from "../Track/Track";
 import styles from "./Centerblock.module.css";
+import TrackSkeleton from "../TrackSkeleton/TrackSkeleton";
 
 
 export default function Centerblock() {
@@ -28,7 +29,8 @@ export default function Centerblock() {
         <PlaylistTitle />
         <div className={styles.contentPlaylist}>
           {isLoading ? (
-            Array.from({ length: 5 }).map((_, index) => <div key={index} >Загрузка</div>)) : (<Track title="Guilt" author="Nero" album="Welcome Reality" time="4:44" />
+            Array.from({ length: 2 }).map((_, index) =>
+              <TrackSkeleton key={index} />)) : (<Track title="Guilt" author="Nero" album="Welcome Reality" time="4:44" />
           )}
           {/*<Track title="Elektro" author="Dynoro, Outwork, Mr. Gee" album="Elektro" time="2:22" />
            <Track title="I’m Fire" author="Ali Bakgor" album="I’m Fire" time="2:22" />
