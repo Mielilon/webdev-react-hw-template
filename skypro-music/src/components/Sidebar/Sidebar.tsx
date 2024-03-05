@@ -7,6 +7,7 @@ import playlist03 from "../../../public/img/playlist03.png"
 import styles from "../Sidebar/Sidebar.module.css"
 import { useEffect, useState } from "react"
 import SidebarSkeleton from "../SidebarSkeleton/SidebarSkeleton"
+import SVG from "../SVG/SVG"
 
 export default function Sidebar() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -25,9 +26,7 @@ export default function Sidebar() {
       <div className={styles.sidebarPersonal}>
         <p className={styles.sidebarPersonalName}>Sergey.Ivanov</p>
         <div className={styles.sidebarIcon}>
-          <svg>
-            <use xlinkHref="img/icon/sprite.svg#logout" />
-          </svg>
+          <SVG className={styles.logout} icon="logout" />
         </div>
       </div>
       <div className={styles.sidebarBlock}>

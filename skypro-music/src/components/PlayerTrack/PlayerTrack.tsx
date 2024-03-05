@@ -4,6 +4,7 @@ import styles from "../PlayerTrack/PlayerTrack.module.css"
 import Link from "next/link"
 import { useEffect, useState } from "react";
 import PlayerSkeleton from "../PlayerSkeleton/PlayerSkeleton";
+import SVG from "../SVG/SVG";
 
 export default function PlayerTrack() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -22,9 +23,7 @@ export default function PlayerTrack() {
       {isLoading ? (<PlayerSkeleton />) : (
         <div className={styles.trackPlayContain}>
           <div className={styles.trackPlayImage}>
-            <svg className={styles.trackPlaySvg}>
-              <use xlinkHref="img/icon/sprite.svg#icon-note" />
-            </svg>
+            <SVG className={styles.trackPlaySvg} icon="icon-note" />
           </div>
           <div className={styles.trackPlayAuthor}>
             <Link className={styles.trackPlayAuthorLink} href="http://">
@@ -40,14 +39,10 @@ export default function PlayerTrack() {
       )}
       <div className={styles.trackPlayLikeDis}>
         <div className={classNames(styles.trackPlayLike, styles.btnIcon)}>
-          <svg className={styles.trackPlayLikeSvg}>
-            <use xlinkHref="img/icon/sprite.svg#icon-like" />
-          </svg>
+          <SVG className={styles.trackPlayLikeSvg} icon="icon-like" />
         </div>
         <div className={classNames(styles.trackPlayDislike, styles.btnIcon)}>
-          <svg className={styles.trackPlayDislikeSvg}>
-            <use xlinkHref="img/icon/sprite.svg#icon-dislike" />
-          </svg>
+          <SVG className={styles.trackPlayDislikeSvg} icon="icon-dislike" />
         </div>
       </div>
     </div >
