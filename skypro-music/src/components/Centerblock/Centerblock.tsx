@@ -6,19 +6,24 @@ import SearchBar from "../SearchBar/SearchBar";
 import Track from "../Track/Track";
 import styles from "./Centerblock.module.css";
 import TrackSkeleton from "../TrackSkeleton/TrackSkeleton";
+import { DataTrack } from "@/app/api/trackAPI";
 
+type CenterblockProps = {
+  isLoading: boolean,
+  tracks: DataTrack[],
+  setCurrentTrack: (track: DataTrack) => void,
+}
 
-export default function Centerblock() {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+export default function Centerblock({ isLoading, tracks, setCurrentTrack }: CenterblockProps) {
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000)
-    return () => {
-      clearTimeout(timeout);
-    }
-  }, [])
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 3000)
+  //   return () => {
+  //     clearTimeout(timeout);
+  //   }
+  // }, [])
 
   return (
     <div className={styles.mainCenterblock}>
@@ -30,8 +35,11 @@ export default function Centerblock() {
         <div className={styles.contentPlaylist}>
           {isLoading ? (
             Array.from({ length: 2 }).map((_, index) =>
-              <TrackSkeleton key={index} />)) : (<Track title="Guilt" author="Nero" album="Welcome Reality" time="4:44" />
-          )}
+              <TrackSkeleton key={index} />)) :
+            tracks.map((track) => (
+              <Track onClick={() => setCurrentTrack(track)} key={track.id} title={track.name} author={track.author} album={track.album} time={track.duration_in_seconds} />
+            ))
+          }
           {/*<Track title="Elektro" author="Dynoro, Outwork, Mr. Gee" album="Elektro" time="2:22" />
            <Track title="I’m Fire" author="Ali Bakgor" album="I’m Fire" time="2:22" />
            <Track title="Non Stop" author="Стоункат, Psychopath" album="Non Stop" time="4:12" />

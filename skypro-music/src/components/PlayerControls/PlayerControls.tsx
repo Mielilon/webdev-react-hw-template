@@ -2,13 +2,17 @@ import classNames from "classnames"
 import styles from "../PlayerControls/PlayerControls.module.css"
 import SVG from "../SVG/SVG"
 
-export default function PlayerControls() {
+type PlayerControlsProps = {
+  togglePlay: () => void,
+}
+
+export default function PlayerControls({togglePlay}: PlayerControlsProps) {
   return (
     <div className={styles.playerControls}>
       <div className={styles.playerBtnPrev}>
         <SVG className={styles.playerBtnPrevSvg} icon="icon-prev" />
       </div>
-      <div className={classNames(styles.playerBtnPlay, styles.btn)}>
+      <div onClick={togglePlay} className={classNames(styles.playerBtnPlay, styles.btn)}>
         <SVG className={styles.playerBtnPlaySvg} icon="icon-play" />
       </div>
       <div className={styles.playerBtnNext}>
