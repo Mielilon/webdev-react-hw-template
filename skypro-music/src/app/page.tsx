@@ -8,6 +8,7 @@ import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./page.module.css"
 import { useEffect, useState } from "react";
 import { DataTrack, getAllTracks } from "./api/trackAPI";
+import { PlayerProvider } from "./contexts/PlayerContext";
 
 export default function Home() {
   const [tracks, setTracks] = useState<DataTrack[]>([]);
@@ -25,17 +26,19 @@ export default function Home() {
 
   return (
     <>
-      <Wrapper>
-        <Container>
-          <main className={styles.main}>
-            <Navigation />
-            <Centerblock isLoading={isLoading} tracks={tracks} setCurrentTrack={setCurrentTrack} />
-            <Sidebar />
-          </main>
-          {currentTrack ? <Bar currentTrack={currentTrack} /> : <></>}
-          <footer className="footer" />
-        </Container>
-      </Wrapper>
+      <PlayerProvider>
+        <Wrapper>
+          <Container>
+            <main className={styles.main}>
+              <Navigation />
+              <Centerblock isLoading={isLoading} tracks={tracks} setCurrentTrack={setCurrentTrack} />
+              <Sidebar />
+            </main>
+            {currentTrack ? <Bar currentTrack={currentTrack} /> : <></>}
+            <footer className="footer" />
+          </Container>
+        </Wrapper>
+      </PlayerProvider>
     </>
   );
 }

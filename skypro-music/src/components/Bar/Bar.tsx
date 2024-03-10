@@ -38,7 +38,7 @@ export default function Bar({ currentTrack }: BarProps) {
         <div className={styles.barPlayerProgress} />
         <div className={styles.barPlayerBlock}>
           <div className={styles.barPlayer}>
-            <PlayerControls togglePlay={togglePlay} />
+            <PlayerControls />
             <PlayerTrack currentTrack={currentTrack} />
           </div>
           <Volume />

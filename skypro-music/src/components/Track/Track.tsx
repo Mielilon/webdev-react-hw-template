@@ -35,7 +35,7 @@ export default function Track({ title, author, album, time, onClick }: TrackType
       </div>
     </div >
       <div>
-        <SVG className={styles.trackTimeSvg} icon="icon-like" />
+        <SVG className={styles.trackTimeSvg} icon="icon-sprite" />
         <span className={styles.trackTimeText}>{time}</span>
       </div>
         </div>

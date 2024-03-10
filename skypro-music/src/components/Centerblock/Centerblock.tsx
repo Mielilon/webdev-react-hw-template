@@ -34,7 +34,7 @@ export default function Centerblock({ isLoading, tracks, setCurrentTrack }: Cent
         <PlaylistTitle />
         <div className={styles.contentPlaylist}>
           {isLoading ? (
-            Array.from({ length: 2 }).map((_, index) =>
+            Array.from({ length: 7 }).map((_, index) =>
               <TrackSkeleton key={index} />)) :
             tracks.map((track) => (
               <Track onClick={() => setCurrentTrack(track)} key={track.id} title={track.name} author={track.author} album={track.album} time={track.duration_in_seconds} />

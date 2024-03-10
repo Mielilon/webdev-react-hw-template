@@ -1,19 +1,19 @@
 import classNames from "classnames"
 import styles from "../PlayerControls/PlayerControls.module.css"
 import SVG from "../SVG/SVG"
+import { useState } from "react";
+import { usePlayer } from "@/app/contexts/PlayerContext";
 
-type PlayerControlsProps = {
-  togglePlay: () => void,
-}
+export default function PlayerControls() {
+  const { isPlaying, togglePlay } = usePlayer();
 
-export default function PlayerControls({togglePlay}: PlayerControlsProps) {
   return (
     <div className={styles.playerControls}>
       <div className={styles.playerBtnPrev}>
         <SVG className={styles.playerBtnPrevSvg} icon="icon-prev" />
       </div>
       <div onClick={togglePlay} className={classNames(styles.playerBtnPlay, styles.btn)}>
-        <SVG className={styles.playerBtnPlaySvg} icon="icon-play" />
+        <SVG className={styles.playerBtnPlaySvg} icon={isPlaying ? "icon-pause" : "icon-play"} />
       </div>
       <div className={styles.playerBtnNext}>
         <SVG className={styles.playerBtnNextSvg} icon="icon-next" />
