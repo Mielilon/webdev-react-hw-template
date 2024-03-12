@@ -16,15 +16,6 @@ type CenterblockProps = {
 
 export default function Centerblock({ isLoading, tracks, setCurrentTrack }: CenterblockProps) {
 
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 3000)
-  //   return () => {
-  //     clearTimeout(timeout);
-  //   }
-  // }, [])
-
   return (
     <div className={styles.mainCenterblock}>
       <SearchBar />

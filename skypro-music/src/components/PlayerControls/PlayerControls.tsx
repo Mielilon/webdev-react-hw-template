@@ -4,7 +4,12 @@ import SVG from "../SVG/SVG"
 import { useState } from "react";
 import { usePlayer } from "@/app/contexts/PlayerContext";
 
-export default function PlayerControls() {
+type PlayerControlsType = {
+  handleLoop: () => void,
+  isLooping: boolean,
+}
+
+export default function PlayerControls({handleLoop, isLooping}: PlayerControlsType) {
   const { isPlaying, togglePlay } = usePlayer();
 
   return (
@@ -18,7 +23,7 @@ export default function PlayerControls() {
       <div className={styles.playerBtnNext}>
         <SVG className={styles.playerBtnNextSvg} icon="icon-next" />
       </div>
-      <div className={classNames(styles.playerBtnRepeat, styles.btnIcon)}>
+      <div onClick={handleLoop} className={classNames(styles.playerBtnRepeat, styles.btnIcon)}>
         <SVG className={styles.playerBtnRepeatSvg} icon="icon-repeat" />
       </div>
       <div className={classNames(styles.playerBtnShuffle, styles.btnIcon)}>
