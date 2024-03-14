@@ -24,7 +24,7 @@ export default function Bar({ currentTrack }: BarProps) {
     const { value } = e.target; // извлекаем значение элемента, который вызвал событие 
     const volume = Number(value) / 10; // преобразуем в диапазон от 0 до 1
     audioRef.current!.volume = volume; // устанавливаем новое значение
-  } 
+  }
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor((seconds % 3600) / 60);
@@ -35,8 +35,8 @@ export default function Bar({ currentTrack }: BarProps) {
 
   const handleDuration = (e: number) => {
     if (!audioRef.current) return;
-    audioRef.current.currentTime = e; 
-  // объект существует, то устанавливается текущее время воспроизведения аудио на значение, переданное в e
+    audioRef.current.currentTime = e;
+    // объект существует, то устанавливается текущее время воспроизведения аудио на значение, переданное в e
   };
 
   const durationDisplay = audioRef.current
@@ -70,7 +70,7 @@ export default function Bar({ currentTrack }: BarProps) {
 
   return (
     <div className={styles.bar}>
-      <audio autoPlay controls src={currentTrack.track_file} ref={audioRef} loop={isLooping} onTimeUpdate={(e) => {
+      <audio hidden autoPlay controls src={currentTrack.track_file} ref={audioRef} loop={isLooping} onTimeUpdate={(e) => {
         setCurrentProgress(e.currentTarget.currentTime)
       }} />
       <div className={styles.barContent}>
