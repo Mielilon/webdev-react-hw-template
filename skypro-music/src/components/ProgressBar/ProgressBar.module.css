@@ -6,7 +6,8 @@
   margin: 0;
   width: 100%;
   height: var(--progress-height);
-  appearance: none;
+  appearance: none; 
+  /* сбрасываем дефолтные стили через appearance */
   cursor: pointer;
   background: transparent;
   position: relative;
@@ -53,4 +54,8 @@
 .styledProgressInput::-moz-range-progress {
   background-color: var(--progress-color);
   height: var(--progress-height);
+}
+
+.styledProgressInput::-webkit-slider-runnable-track:hover {
+ border: .5px solid white;
 }

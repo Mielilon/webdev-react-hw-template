@@ -14,23 +14,17 @@ export default function Bar({ currentTrack }: BarProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLooping, setIsLooping] = useState(false);
   const [currentProgress, setCurrentProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
+  // const [duration, setDuration] = useState(0);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const duration = audioRef.current ? audioRef.current.duration : 0;
+  // если audioRef.current определен, то duration будет равен длительности аудио 
 
   function handleVolume(e: React.ChangeEvent<HTMLInputElement>): void {
-    const { value } = e.target;
-    const volume = Number(value) / 10;
-    audioRef.current!.volume = volume;
-  }
-
-  const handleProgress = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setCurrentProgress(Number(value));
-    if (audioRef.current) {
-      audioRef.current.currentTime = Number(value);
-    }
-  };
+    const { value } = e.target; // извлекаем значение элемента, который вызвал событие 
+    const volume = Number(value) / 10; // преобразуем в диапазон от 0 до 1
+    audioRef.current!.volume = volume; // устанавливаем новое значение
+  } 
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor((seconds % 3600) / 60);
@@ -39,11 +33,10 @@ export default function Bar({ currentTrack }: BarProps) {
     return result;
   };
 
-  const handleDuration = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    const duration = Number(value) / 10;
-    audioRef.current!.duration = duration;
-    setDuration(duration);
+  const handleDuration = (e: number) => {
+    if (!audioRef.current) return;
+    audioRef.current.currentTime = e; 
+  // объект существует, то устанавливается текущее время воспроизведения аудио на значение, переданное в e
   };
 
   const durationDisplay = audioRef.current
@@ -81,23 +74,26 @@ export default function Bar({ currentTrack }: BarProps) {
         setCurrentProgress(e.currentTarget.currentTime)
       }} />
       <div className={styles.barContent}>
+        <div className={styles.barPlayerTime}>
+          {elapsedDisplay} / {durationDisplay}
+        </div>
         <ProgressBar
-          currentTime={currentProgress}
+          currentProgress={currentProgress}
+          setCurrentProgress={setCurrentProgress}
           duration={duration}
-          handleProgress={handleProgress}
+          handleDuration={handleDuration}
         />
         <div className={styles.barPlayerBlock}>
           <div className={styles.barPlayer}>
-            <PlayerControls isLooping={isLooping} handleLoop={handleLoop} />
+            <PlayerControls
+              isLooping={isLooping}
+              handleLoop={handleLoop}
+              togglePlay={togglePlay}
+              isPlaying={isPlaying} />
             <PlayerTrack currentTrack={currentTrack} />
           </div>
-         <div className={styles.wrapBar}>
-         <Volume handleVolume={handleVolume} />
-          <div className={styles.barPlayerTime}>
-            {elapsedDisplay} / {durationDisplay}
-          </div>
+          <Volume handleVolume={handleVolume} />
         </div>
-         </div>
       </div>
     </div>
   )

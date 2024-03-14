@@ -1,14 +1,15 @@
-import { useEffect, useRef, useState } from "react";
 import styles from "./ProgressBar.module.css"
 
 
 type ProgressBarType = {
-  currentTime: number, 
+  currentProgress: number, 
   duration: number, 
-  handleProgress: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  handleDuration: (e: number) => void,
+  setCurrentProgress: (progress: number) => void,
 }
 
-export default function ProgressBar({ currentTime, duration, handleProgress }: ProgressBarType) {
+export default function ProgressBar({ currentProgress, duration, handleDuration, setCurrentProgress }: ProgressBarType) {
+ // const duration = 230;
 
   return (
     <input
@@ -16,9 +17,12 @@ export default function ProgressBar({ currentTime, duration, handleProgress }: P
       type="range"
       min={0}
       max={duration}
-      value={currentTime}
+      value={currentProgress}
       step={0.01}
-      onChange={handleProgress}
+      onChange={(event) => {
+        handleDuration(event.target.valueAsNumber);
+        setCurrentProgress(event.target.valueAsNumber);
+      }}
     />
   );
 }
