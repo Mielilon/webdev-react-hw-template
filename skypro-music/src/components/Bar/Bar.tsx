@@ -1,17 +1,18 @@
+'use client'
 import PlayerControls from "../PlayerControls/PlayerControls";
 import PlayerTrack from "../PlayerTrack/PlayerTrack";
 import Volume from "../Volume/Volume";
 import styles from "../Bar/Bar.module.css"
-import { DataTrack } from "@/app/api/trackAPI";
 import { useEffect, useRef, useState } from "react";
 import { ProgressBar } from "../ProgressBar";
+import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
+import { toggleIsPlaying } from "@/app/store/features/PlaylistSlice";
 
-type BarProps = {
-  currentTrack: DataTrack,
-}
 
-export default function Bar({ currentTrack }: BarProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
+export default function Bar() {
+  const { currentTrack, isPlaying } = useAppSelector((store) => store.playlist)
+  const dispatch = useAppDispatch();
+  
   const [isLooping, setIsLooping] = useState(false);
   const [currentProgress, setCurrentProgress] = useState(0);
   // const [duration, setDuration] = useState(0);
@@ -51,15 +52,19 @@ export default function Bar({ currentTrack }: BarProps) {
       return
     }
     audioRef.current.play();
-    setIsPlaying(true);
+    dispatch(toggleIsPlaying(true));
   };
+
+  useEffect(() => {
+    dispatch(toggleIsPlaying(true));
+  }, [currentTrack, dispatch])
 
   const handleStop = () => {
     if (!audioRef.current) {
       return
     }
     audioRef?.current.pause();
-    setIsPlaying(false);
+    dispatch(toggleIsPlaying(false));
   };
 
   const handleLoop = () => {
@@ -70,31 +75,35 @@ export default function Bar({ currentTrack }: BarProps) {
 
   return (
     <div className={styles.bar}>
-      <audio hidden autoPlay controls src={currentTrack.track_file} ref={audioRef} loop={isLooping} onTimeUpdate={(e) => {
-        setCurrentProgress(e.currentTarget.currentTime)
-      }} />
-      <div className={styles.barContent}>
-        <div className={styles.barPlayerTime}>
-          {elapsedDisplay} / {durationDisplay}
-        </div>
-        <ProgressBar
-          currentProgress={currentProgress}
-          setCurrentProgress={setCurrentProgress}
-          duration={duration}
-          handleDuration={handleDuration}
-        />
-        <div className={styles.barPlayerBlock}>
-          <div className={styles.barPlayer}>
-            <PlayerControls
-              isLooping={isLooping}
-              handleLoop={handleLoop}
-              togglePlay={togglePlay}
-              isPlaying={isPlaying} />
-            <PlayerTrack currentTrack={currentTrack} />
+      {currentTrack && (
+        <>
+          <audio hidden autoPlay controls src={currentTrack.track_file} ref={audioRef} loop={isLooping} onTimeUpdate={(e) => {
+            setCurrentProgress(e.currentTarget.currentTime)
+          }}  />
+          <div className={styles.barContent}>
+            <div className={styles.barPlayerTime}>
+              {elapsedDisplay} / {durationDisplay}
+            </div>
+            <ProgressBar
+              currentProgress={currentProgress}
+              setCurrentProgress={setCurrentProgress}
+              duration={duration}
+              handleDuration={handleDuration}
+            />
+            <div className={styles.barPlayerBlock}>
+              <div className={styles.barPlayer}>
+                <PlayerControls
+                  isLooping={isLooping}
+                  handleLoop={handleLoop}
+                  togglePlay={togglePlay}
+                  isPlaying={isPlaying} />
+                <PlayerTrack track={currentTrack} />
+              </div>
+              <Volume handleVolume={handleVolume} />
+            </div>
           </div>
-          <Volume handleVolume={handleVolume} />
-        </div>
-      </div>
+        </>
+      )}
     </div>
   )
 }

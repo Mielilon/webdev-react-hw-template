@@ -12,7 +12,6 @@ import { DataTrack, getAllTracks } from "./api/trackAPI";
 export default function Home() {
   const [tracks, setTracks] = useState<DataTrack[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [currentTrack, setCurrentTrack] = useState<DataTrack | null>(null)
 
   useEffect(() => {
     getAllTracks()
@@ -21,7 +20,6 @@ export default function Home() {
         setIsLoading(false)
       })
   }, [])
-  console.log(currentTrack);
 
   return (
     <>
@@ -29,10 +27,10 @@ export default function Home() {
         <Container>
           <main className={styles.main}>
             <Navigation />
-            <Centerblock isLoading={isLoading} tracks={tracks} setCurrentTrack={setCurrentTrack} />
+            <Centerblock tracks={tracks} />
             <Sidebar />
           </main>
-          {currentTrack ? <Bar currentTrack={currentTrack} /> : <></>}
+          <Bar /> 
           <footer className="footer" />
         </Container>
       </Wrapper>

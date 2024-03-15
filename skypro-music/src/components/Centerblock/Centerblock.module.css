@@ -37,3 +37,11 @@
   max-height: 1000px;
 }
 
+.contentPlaylist::-webkit-scrollbar {
+  width: 3px;
+}
+
+.contentPlaylist::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
