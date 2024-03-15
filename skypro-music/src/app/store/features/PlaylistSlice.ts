@@ -51,9 +51,19 @@ const playlistSlice = createSlice({
     },
     toggleIsPlaying: (state, action: PayloadAction<boolean>) => {
       state.isPlaying = action.payload;
+    },
+    prevTrack: (state) => {
+      const currentTracks = state.isShuffled ? state.shuffledTracks : state.tracks;
+      const currentTrackIndex = currentTracks.findIndex((item) => item.id === state.currentTrack?.id);
+      const oldTrack = currentTracks[currentTrackIndex - 1];
+      if (!oldTrack) {
+        state.currentTrack = state.tracks[state.tracks.length - 1]
+      } else {
+        state.currentTrack = oldTrack;
+      }
     }
   },
 });
 
-export const { setTracks, toggleShuffled, setCurrentTrack, nextTrack, toggleIsPlaying } = playlistSlice.actions;
+export const { setTracks, toggleShuffled, setCurrentTrack, nextTrack, toggleIsPlaying, prevTrack } = playlistSlice.actions;
 export const PlaylistReducer = playlistSlice.reducer;

@@ -3,7 +3,6 @@ import classNames from "classnames"
 import styles from "../PlayerTrack/PlayerTrack.module.css"
 import SVG from "../SVG/SVG";
 import { DataTrack } from "@/app/api/trackAPI";
-import { useAppDispatch } from "@/app/hooks/hooks";
 
 type PlayerTrackProps = {
   track: DataTrack,

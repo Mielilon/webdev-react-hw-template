@@ -12,7 +12,7 @@ import { toggleIsPlaying } from "@/app/store/features/PlaylistSlice";
 export default function Bar() {
   const { currentTrack, isPlaying } = useAppSelector((store) => store.playlist)
   const dispatch = useAppDispatch();
-  
+
   const [isLooping, setIsLooping] = useState(false);
   const [currentProgress, setCurrentProgress] = useState(0);
   // const [duration, setDuration] = useState(0);
@@ -79,7 +79,7 @@ export default function Bar() {
         <>
           <audio hidden autoPlay controls src={currentTrack.track_file} ref={audioRef} loop={isLooping} onTimeUpdate={(e) => {
             setCurrentProgress(e.currentTarget.currentTime)
-          }}  />
+          }} />
           <div className={styles.barContent}>
             <div className={styles.barPlayerTime}>
               {elapsedDisplay} / {durationDisplay}
