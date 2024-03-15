@@ -1,7 +1,7 @@
 export interface DataTrack {
   album: string,
   author: string,
-  duration_in_seconds: string,
+  duration_in_seconds: number,
   genre: string,
   id: number,
   logo: null,

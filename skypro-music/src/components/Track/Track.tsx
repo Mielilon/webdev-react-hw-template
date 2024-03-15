@@ -4,6 +4,7 @@ import SVG from "../SVG/SVG";
 import { useAppDispatch } from "@/app/hooks/hooks";
 import { DataTrack } from "@/app/api/trackAPI";
 import { setCurrentTrack } from "@/app/store/features/PlaylistSlice";
+import formatTime from "@/app/libs/formatTime";
 
 type TrackType = {
   track: DataTrack,
@@ -39,7 +40,7 @@ export default function Track({ track, tracks }: TrackType) {
           </div >
           <div>
             <SVG className={styles.trackTimeSvg} icon="icon-sprite" />
-            <span className={styles.trackTimeText}>{duration_in_seconds}</span>
+            <span className={styles.trackTimeText}>{formatTime(duration_in_seconds)}</span>
           </div>
         </div>
       </div >

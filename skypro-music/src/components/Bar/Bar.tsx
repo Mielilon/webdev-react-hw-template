@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { ProgressBar } from "../ProgressBar";
 import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
 import { toggleIsPlaying } from "@/app/store/features/PlaylistSlice";
+import formatTime from "@/app/libs/formatTime";
 
 
 export default function Bar() {
@@ -26,13 +27,6 @@ export default function Bar() {
     const volume = Number(value) / 10; // преобразуем в диапазон от 0 до 1
     audioRef.current!.volume = volume; // устанавливаем новое значение
   }
-
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = Math.floor(seconds % 60);
-    const result = String(mins).padStart(2, "0") + ":" + String(secs).padStart(2, "0");
-    return result;
-  };
 
   const handleDuration = (e: number) => {
     if (!audioRef.current) return;
