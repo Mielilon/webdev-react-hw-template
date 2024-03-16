@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/signin.css" />
+    <title>Skypro</title>
+  </head>
+  <body>
+    <div className={styles.wrapper}>
+      <div className={styles.containerEnter}>
+        <div className={styles.modalBlock}>
+          <form className={styles.modalFormLogin} action="#">
+            <a href="../">
+              <div className={styles.modalLogo}>
+                <Image src="../img/logo_modal.png" alt="logo" />
+              </div>
+            </a>
+            <input
+              className={styles.modalInput login}
+              type="text"
+              name="login"
+              placeholder="Почта"
+            />
+            <input
+              className={styles.modalInput password}
+              type="password"
+              name="password"
+              placeholder="Пароль"
+            />
+            <button className={styles.modalBtnEnter}>
+              <a href="../index.html">Войти</a>
+            </button>
+            <button className={styles.modalBtnSignup}>
+              <a href="signup.html">Зарегистрироваться</a>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
