@@ -48,6 +48,7 @@ const playlistSlice = createSlice({
       } else {
         state.currentTrack = newTrack;
       }
+      state.isPlaying = true;
     },
     toggleIsPlaying: (state, action: PayloadAction<boolean>) => {
       state.isPlaying = action.payload;
@@ -61,6 +62,7 @@ const playlistSlice = createSlice({
       } else {
         state.currentTrack = oldTrack;
       }
+      state.isPlaying = true;
     }
   },
 });

@@ -1,7 +1,7 @@
 'use client'
 import styles from "./Track.module.css";
 import SVG from "../SVG/SVG";
-import { useAppDispatch } from "@/app/hooks/hooks";
+import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
 import { DataTrack } from "@/app/api/trackAPI";
 import { setCurrentTrack } from "@/app/store/features/PlaylistSlice";
 import formatTime from "@/app/libs/formatTime";
@@ -13,14 +13,20 @@ type TrackType = {
 
 export default function Track({ track, tracks }: TrackType) {
   const dispatch = useAppDispatch();
+  const isPlaying = useAppSelector((store) => store.playlist.isPlaying)
+
   const { name, album, author, duration_in_seconds } = track;
   return (
     <>
-      <div onClick={() => dispatch(setCurrentTrack({currentTrack: track, tracks}))} className={styles.playlistItem}>
+      <div onClick={() => dispatch(setCurrentTrack({ currentTrack: track, tracks }))} className={styles.playlistItem}>
         <div className={styles.playlistTrack}>
           <div className={styles.trackTitle}>
             <div className={styles.trackTitleImage}>
-              <SVG className={styles.trackTitleSvg} icon="icon-note" />
+              {isPlaying
+                ? <SVG className={styles.trackTitleSvg
+                } icon="icon-note" />
+                : <div className={styles.pulsingRound}></div>
+              }
             </div>
             <div>
               <div className={styles.trackTitleLink}>
