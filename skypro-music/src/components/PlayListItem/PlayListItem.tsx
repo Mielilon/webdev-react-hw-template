@@ -9,7 +9,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -28,7 +28,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>4:44</span>
                     </div>
@@ -40,7 +40,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -59,7 +59,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>2:22</span>
                     </div>
@@ -71,7 +71,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -90,7 +90,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>2:22</span>
                     </div>
@@ -102,7 +102,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -122,7 +122,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>4:12</span>
                     </div>
@@ -134,7 +134,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -156,7 +156,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>2:54</span>
                     </div>
@@ -168,7 +168,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -192,7 +192,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>5:20</span>
                     </div>
@@ -204,7 +204,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -226,7 +226,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>3:41</span>
                     </div>
@@ -238,7 +238,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -258,7 +258,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/mage/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>1:48</span>
                     </div>
@@ -270,7 +270,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -290,7 +290,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>1:48</span>
                     </div>
@@ -302,7 +302,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -322,7 +322,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>1:48</span>
                     </div>
@@ -334,7 +334,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -354,7 +354,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>1:48</span>
                     </div>
@@ -366,7 +366,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -386,7 +386,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>1:48</span>
                     </div>
@@ -398,7 +398,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -418,7 +418,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>1:48</span>
                     </div>
@@ -430,7 +430,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -450,7 +450,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>1:48</span>
                     </div>
@@ -462,7 +462,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -484,7 +484,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>3:32</span>
                     </div>
@@ -496,7 +496,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -515,7 +515,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}>3:36</span>
                     </div>
@@ -527,7 +527,7 @@ export default function PlayListItem() {
                     <div className={styles.trackTitle}>
                         <div className={styles.trackTitleImage}>
                             <svg className={styles.trackTitleSvg}>
-                                <use href="img/icon/sprite.svg#icon-note"></use>
+                                <use href="/image/icon/sprite.svg#icon-note"></use>
                             </svg>
                         </div>
                         <div className={styles.trackTitleText}>
@@ -544,7 +544,7 @@ export default function PlayListItem() {
                     </div>
                     <div className={styles.trackTime}>
                         <svg className={styles.trackTimeSvg}>
-                            <use href="img/icon/sprite.svg#icon-like"></use>
+                            <use href="/image/icon/sprite.svg#icon-like"></use>
                         </svg>
                         <span className={styles.trackTimeText}></span>
                     </div>

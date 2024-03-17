@@ -44,3 +44,7 @@
   .volumeProgressLine {
     width: 109px;
   }
+
+  ._btn {
+    cursor: pointer;
+  }

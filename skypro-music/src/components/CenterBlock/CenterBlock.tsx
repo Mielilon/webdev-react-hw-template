@@ -8,7 +8,7 @@ export default function CenterBlock() {
         <div className={classNames(styles.mainCenterBlock, styles.centerBlock)}>
             <div className={classNames(styles.centerBlockSearch, styles.search)}>
                 <svg className={styles.searchSvg}>
-                    <use href="img/icon/sprite.svg#icon-search"></use>
+                    <use href="/image/icon/sprite.svg#icon-search"></use>
                 </svg>
                 <input
                     className={styles.searchText}
@@ -28,13 +28,13 @@ export default function CenterBlock() {
                     <div className={classNames(styles.playlistTitleCol, styles.col03)}>Альбом</div>
                     <div className={classNames(styles.playlistTitleCol, styles.col04)}>
                         <svg className={styles.playlistTitleSvg}>
-                            <use href="img/icon/sprite.svg#icon-watch"></use>
+                            <use href="/image/icon/sprite.svg#icon-watch"></use>
                         </svg>
                     </div>
                 </div >
 
                 <PlayList />
-                
+
             </div >
         </div >
     )

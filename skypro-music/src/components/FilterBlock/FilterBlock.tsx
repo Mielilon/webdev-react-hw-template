@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import styles from "@components/CenterFilter/CenterFilter.module.css"
+import styles from "@components/FilterBlock/FilterBlock.module.css"
 
-export default function CenterFilter() {
+export default function FilterBlock() {
     return (
         <div className={classNames(styles.centerBlockFilter, styles.filter)}>
         <div className={styles.filterTitle}>Искать по:</div>

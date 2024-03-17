@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -100,7 +100,7 @@ body {
   background-color: transparent;
 }
 
-.modal__logo img {
+.modal__logo image {
   width: 140px;
   height: auto;
 }
@@ -189,4 +189,4 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
+} */

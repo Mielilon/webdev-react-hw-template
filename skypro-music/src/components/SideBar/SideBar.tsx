@@ -9,7 +9,7 @@ export default function SideBar() {
                 <p className="{styles.sidebarPersonalName}">Sergey.Ivanov</p>
                 <div className="{styles.sidebarIcon}">
                     <svg>
-                        <use href="img/icon/sprite.svg#logout"></use>
+                        <use href="/image/icon/sprite.svg#logout"></use>
                     </svg>
                 </div>
             </div>
@@ -18,33 +18,33 @@ export default function SideBar() {
                     <div className={styles.sidebarItem}>
                         <a className={styles.sidebarLink} href="#">
                             <Image
-                                className={styles.sidebarImg}
-                                src="img/playlist01.png"
+                                className={styles.sidebarImage}
+                                src="/image/playlist01.png"
                                 alt="day's playlist"
                                 width={250}
-                                height={170}
+                                height={150}
                             />
                         </a>
                     </div>
                     <div className={styles.sidebarItem}>
                         <a className={styles.sidebarLink} href="#">
                             <Image
-                                className={styles.sidebarImg}
-                                src="img/playlist02.png"
+                                className={styles.sidebarImage}
+                                src="/image/playlist02.png"
                                 alt="day's playlist"
                                 width={250}
-                                height={170}
+                                height={150}
                             />
                         </a>
                     </div>
                     <div className={styles.sidebarItem}>
                         <a className={styles.sidebarLink} href="#">
                             <Image
-                                className={styles.sidebarImg}
-                                src="img/playlist03.png"
+                                className={styles.sidebarImage}
+                                src="/image/playlist03.png"
                                 alt="day's playlist"
                                 width={250}
-                                height={170}
+                                height={150}
                             />
                         </a>
                     </div>
