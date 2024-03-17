@@ -8,15 +8,16 @@ import { ProgressBar } from "../ProgressBar";
 import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
 import { toggleIsPlaying } from "@/app/store/features/PlaylistSlice";
 import formatTime from "@/app/libs/formatTime";
+import { DataTrack } from "@/app/api/trackAPI";
 
 
-export default function Bar() {
+export default function Bar({ tracks }: { tracks: DataTrack[] }) {
   const { currentTrack, isPlaying } = useAppSelector((store) => store.playlist)
   const dispatch = useAppDispatch();
 
   const [isLooping, setIsLooping] = useState(false);
   const [currentProgress, setCurrentProgress] = useState(0);
-  // const [duration, setDuration] = useState(0);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const duration = audioRef.current ? audioRef.current.duration : 0;
@@ -67,6 +68,35 @@ export default function Bar() {
 
   const togglePlay = isPlaying ? handleStop : handleStart;
 
+  const handleEnded = () => {
+    // Проверяем, не является ли текущий трек последним в плейлисте
+    if (currentTrackIndex < tracks.length - 1) {
+      // Переход к следующему треку
+      setCurrentTrackIndex(currentTrackIndex + 1);
+    } else {
+      // Или начинаем плейлист с начала
+      setCurrentTrackIndex(0);
+    }
+  };
+
+  // Устанавливаем источник аудио и обработчик события `ended` при изменении трека
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (!audio) {
+      return;
+    }
+    audio.src = tracks[currentTrackIndex].track_file;
+    audio.addEventListener('ended', handleEnded);
+
+    // Воспроизводим новый трек
+    audio.play();
+
+    return () => {
+      audio.removeEventListener('ended', handleEnded);
+    };
+  }, [currentTrackIndex, tracks]);
+  
   return (
     <div className={styles.bar}>
       {currentTrack && (

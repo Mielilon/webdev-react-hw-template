@@ -3,7 +3,6 @@ import PlaylistTitle from "../PlaylistTitle/PlaylistTitle";
 import SearchBar from "../SearchBar/SearchBar";
 import Track from "../Track/Track";
 import styles from "./Centerblock.module.css";
-import TrackSkeleton from "../TrackSkeleton/TrackSkeleton";
 import { DataTrack } from "@/app/api/trackAPI";
 
 type CenterblockProps = {

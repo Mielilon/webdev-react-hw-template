@@ -39,33 +39,26 @@ const playlistSlice = createSlice({
         () => 0.5 - Math.random(),
       )
     },
-    nextTrack: (state) => {
-      const currentTracks = state.isShuffled ? state.shuffledTracks : state.tracks;
-      const currentTrackIndex = currentTracks.findIndex((item) => item.id === state.currentTrack?.id);
-      const newTrack = currentTracks[currentTrackIndex + 1];
-      if (!newTrack) {
-        state.currentTrack = state.tracks[0]
-      } else {
-        state.currentTrack = newTrack;
-      }
-      state.isPlaying = true;
-    },
+    nextTrack: changeTrack(1),
+    prevTrack: changeTrack(-1),
     toggleIsPlaying: (state, action: PayloadAction<boolean>) => {
       state.isPlaying = action.payload;
     },
-    prevTrack: (state) => {
-      const currentTracks = state.isShuffled ? state.shuffledTracks : state.tracks;
-      const currentTrackIndex = currentTracks.findIndex((item) => item.id === state.currentTrack?.id);
-      const oldTrack = currentTracks[currentTrackIndex - 1];
-      if (!oldTrack) {
-        state.currentTrack = state.tracks[state.tracks.length - 1]
-      } else {
-        state.currentTrack = oldTrack;
-      }
-      state.isPlaying = true;
-    }
   },
 });
+
+function changeTrack(direction: number) {
+  return (state: TrackListType) => {
+    const currentTracks = state.isShuffled ? state.shuffledTracks : state.tracks;
+    let newIndex = currentTracks.findIndex(item => item.id === state.currentTrack?.id) + direction;
+
+    // Циклическое переключение. Ищет остаток от деления. Если достигаем конца - идем в начало списка
+    newIndex = (newIndex + currentTracks.length) % currentTracks.length;
+  
+    state.currentTrack = currentTracks[newIndex];
+    state.isPlaying = true;
+  };
+}
 
 export const { setTracks, toggleShuffled, setCurrentTrack, nextTrack, toggleIsPlaying, prevTrack } = playlistSlice.actions;
 export const PlaylistReducer = playlistSlice.reducer;

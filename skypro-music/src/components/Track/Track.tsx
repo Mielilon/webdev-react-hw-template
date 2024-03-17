@@ -14,8 +14,8 @@ type TrackType = {
 export default function Track({ track, tracks }: TrackType) {
   const dispatch = useAppDispatch();
   const isPlaying = useAppSelector((store) => store.playlist.isPlaying)
-
   const { name, album, author, duration_in_seconds } = track;
+  
   return (
     <>
       <div onClick={() => dispatch(setCurrentTrack({ currentTrack: track, tracks }))} className={styles.playlistItem}>
