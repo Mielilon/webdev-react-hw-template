@@ -61,7 +61,7 @@
   cursor: pointer;
 }
 
-.list:active {
+.listActive {
   border-color: #ad61ff;
   color: #ad61ff;
   cursor: pointer;

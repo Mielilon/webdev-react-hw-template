@@ -1,3 +1,5 @@
+'use client'
+import { useAppSelector } from "@/app/hooks/hooks";
 import FilterWrapper from "../FilterWrapper/FilterWrapper";
 import PlaylistTitle from "../PlaylistTitle/PlaylistTitle";
 import SearchBar from "../SearchBar/SearchBar";
@@ -10,6 +12,7 @@ type CenterblockProps = {
 }
 
 export default function Centerblock({ tracks }: CenterblockProps) {
+  const filteredTracks = useAppSelector((store) => store.playlist.filteredTracks)
 
   return (
     <div className={styles.mainCenterblock}>
@@ -19,7 +22,9 @@ export default function Centerblock({ tracks }: CenterblockProps) {
       <div className={styles.centerblockContent}>
         <PlaylistTitle />
         <div className={styles.contentPlaylist}>
-          {tracks.map((track) => (
+          {/* если отфильтрованных треов нет, то покажем исходный список треков
+         если есть фильтры, но нет результатов, то покажем текст "результаты не найдены"*/}
+          {filteredTracks?.map((track) => (
             <Track
               key={track.id}
               track={track}
